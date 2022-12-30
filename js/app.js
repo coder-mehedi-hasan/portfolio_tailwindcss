@@ -5,9 +5,8 @@ let removeNavbar = document.getElementById('removeNavbar')
 let main_navTop = document.getElementById('main_nav')
 let removeNavbarIcon = document.getElementById('removeNavbarIcon')
 
-let ol = document.querySelectorAll('ol li a')
-console.log(ol)
 
+/*
 addNavbar.addEventListener('click',function(){
     main_navTop.style.top='0px'
 })
@@ -25,6 +24,7 @@ removeNavbar.addEventListener('mouseenter',function(){
         removeNavbarIcon.style.transform = 'rotate(0deg)'
     }
 })
+*/
 // document.getElementById('secSlideDotsGroup').style.visibility = 'hidden'
 function sectionSliderFunc(v){
     for(i=0;i<v;i++){
@@ -51,6 +51,40 @@ window.addEventListener('wheel',function(event){
     }
 })
 
+// timeline 
+const timelineSliderButtons = document.querySelectorAll('.timeline_slider .controler ol li a')
+const timelineSliderContents = document.querySelectorAll('.timeline_slider_content ol li')
+const timelineControlerBtnPrev = document.querySelector('#timeline .prev .slideBtn')
+const timelineControlerBtnNext = document.querySelector('#timeline .next .slideBtn')
+const timelineControler = document.querySelector('.timeline_slider .controler')
+let filler = document.querySelector('.controler .filler')
+
+// console.log(filler.style.width)
+timelineControlerBtnPrev.addEventListener('click',function(){
+    timelineControler.style.transform = 'translateX(0)' 
+    timelineControlerBtnPrev.className += ' inactiveControler'
+})
+timelineControlerBtnNext.addEventListener('click',function(){
+    timelineControler.style.transform = 'translateX(-50%)' 
+    timelineControlerBtnNext.className += ' inactiveControler'
+})
+
+
+const timelineSliderButtonPressed = e => {
+    const ButtonDate = e.target.getAttribute('data-date')
+    for(timelineSliderContent of timelineSliderContents){
+        const SliderContentDate = timelineSliderContent.getAttribute('data-date')
+        timelineSliderContent.className = timelineSliderContent.className.replace("selected","")
+        if(ButtonDate === SliderContentDate){
+            timelineSliderContent.className += 'selected'
+        }
+        timelineSliderContent.style.left='20px'
+        // console.log(m)
+    } 
+}
+for(button of timelineSliderButtons){
+    button.addEventListener('click',timelineSliderButtonPressed)
+}
 
 
 

@@ -481,6 +481,7 @@ body{
 }
 #timeline .timeline_slider_content{
     position: relative;
+    overflow: hidden;
 }
 #timeline .timeline_slider_content .title h4{
     font-size: 26px;
@@ -508,18 +509,18 @@ body{
     color: #fff;
     letter-spacing: 1px;
 }
-
 #timeline .timeline_slider_content li{
     width: 100%;
-    background-color: #171717;
     position: absolute;
     top: 0;
+    left: 0;
+    transform: translateX(-100%);
 }
-
-
-
-
-
+#timeline .timeline_slider_content .selected{
+    position: relative;
+    transform: translateX(0);
+    transition: .4s;
+}
 /* ___________ */
 #portfolio{
     width: 100%;
@@ -658,8 +659,12 @@ body{
     transform: skewX(0deg);
     width: 100%;
 }
-
-
+/* ......................  */
+#portfolio .portfolio_slide{
+    margin-top: 50px;
+    width: 4620px;
+    /* transform: translate3d(410px , 0px ,0px); */
+}
 
 
 
