@@ -257,6 +257,7 @@ body{
 }
 /* slider & slider dot  */
 /* content start */
+/* .........home......... */
 #main #home{
     width: 100%;
     height: 100%;
@@ -362,6 +363,7 @@ body{
     }
 
 }
+/* .........about......... */
 #main #about{
     height: 100%;
     width: 100%;
@@ -412,6 +414,7 @@ body{
     margin: 30px 0;
     border-radius: 2px;
 }
+/* .........timeline......... */
 #main #timeline{
     height: 100%;
     width: 100%;
@@ -521,7 +524,7 @@ body{
     transform: translateX(0);
     transition: .4s;
 }
-/* ___________ */
+/* .........portfolio......... */
 #portfolio{
     width: 100%;
     height: 100%;
@@ -529,8 +532,9 @@ body{
 }
 #portfolio .portfolio_slide{
     margin-top: 50px;
-    width: 4620px;
-    /* transform: translate3d(-410px , 0px ,0px); */
+    width: 4510px;
+    transform: translate3d(0px , 0px ,0px);
+    transition: .5s;
 }
 #portfolio .portfolio_slide_item{
     margin-right: 35px;
@@ -619,20 +623,21 @@ body{
     position: absolute;
     width: 0%;
     height: 100%;
-    background-color: rgba(23, 23, 23, 0.6);
+    background-color: #000;
+    opacity: 0.6;
     left: 0;
     top: 0;
     z-index: 1;
     transform: skewX(-25deg);
     transition: .4s;
-
 }
 #portfolio .portfolio_slide_item .img .overlay::after{
     content: '';
     position: absolute;
     width: 0%;
     height: 100%;
-    background-color: rgba(23, 23, 23, 0.6);
+    background-color: #000;
+    opacity: 0.6;
     right: 0;
     top: 0;
     z-index: 1;
@@ -659,39 +664,154 @@ body{
     transform: skewX(0deg);
     width: 100%;
 }
-/* ......................  */
-#portfolio .portfolio_slide{
-    margin-top: 50px;
-    width: 4620px;
-    /* transform: translate3d(410px , 0px ,0px); */
-}
-
-
-
-
-
-
-
-
-
-
-
-/* ___________ */
+/* .........testimonial......... */
 #testimonial{
     width: 100%;
     height: 100%;
-    padding: 100px 0;
+    padding: 70px 0;
 }
-/* ___________ */
+#testimonial .testimonial_item .testimonial_slider{
+    position: relative;
+    overflow:hidden;
+    height: 350px;
+}
+#testimonial .testimonial_slider .slider_item{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    font-size: 50px;
+    color: #000;
+    font-weight: 700;
+}
+#testimonial .testimonial_slider .active{
+    transform: translateX(0);
+    transition: .4s;
+}
+#testimonial .testimonial_item .controler{
+    text-align: center;
+}
+#testimonial .testimonial_item .controler span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #a6a6a6;
+    margin: 0 5px;
+    cursor: pointer;
+}
+#testimonial .testimonial_item .slider_item .icon i{
+    font-size: 50px;
+    color: #dabd1d;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+#testimonial .testimonial_item .slider_item .img{
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: 5px auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#testimonial .testimonial_item .slider_item img{
+    height: 100%;
+    width: 100%;
+}
+#testimonial .testimonial_item .slider_item p{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.5;
+}
+#testimonial .testimonial_item .slider_item h3{
+    font-size: 22px;
+    font-weight: 600;
+    color: #dabd1d;
+    font-family: 'Oswald',sans-serif;
+    line-height: 1.5;
+}
+
+/* .........contact......... */
 #contact{
     width: 100%;
     height: 100%;
     padding: 100px 0;
 }
+#contact .main form .left{
+    width: 40%;
 
+}
+#contact .main form .right{
+    width: 50%;
+
+}
+#contact .main form input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #a6a6a6;
+    margin: 20px 0;
+    padding: 8px 5px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 400;
+    outline: none;
+    transition: .4s;
+    overflow-wrap: break-word;
+}
+#contact .main form input::placeholder{
+    font-size: 18px;
+    font-weight: 400;
+    color: #a6a6a6;
+}
+#contact .main form input:focus{
+    border-bottom: 1px solid #fff;
+}
+#contact .main form textarea{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #a6a6a6;
+    margin: 20px 0;
+    padding: 8px 5px;
+    font-size: 16px;
+    background-color: transparent;
+    color: #fff;
+    font-weight: 400;
+    outline: none;
+    transition: .4s;
+    height: 200px;
+}
+#contact .main form textarea::placeholder{
+    font-size: 18px;
+    font-weight: 400;
+    color: #a6a6a6;
+}
+#contact .main form textarea:focus{
+    border-bottom: 1px solid #fff;
+}
+#contact .main form button{
+    border: 2px solid #dabd1d;
+    margin: 20px 0;
+    background-color: transparent;
+    color: #dabd1d;
+    font-weight: 400;
+    outline: none;
+    transition: .4s;
+    font-size: 18px;
+    padding: 8px 50px;
+    line-height: 24px;
+    font-weight: 400;
+    border-radius: 50px;
+}
+#contact .main form button:hover{
+    background-color: #dabd1d;
+    color: #2b3033;
+}
 /* content end*/
 /* main content end */
-
 /* footer start  */
 #footer{
     width: 100%;
@@ -700,7 +820,6 @@ body{
     left: 0;
     z-index: 9999 !important;
 }
-
 #footer .contact .icon{
     height: 35px;
     width: 35px;
